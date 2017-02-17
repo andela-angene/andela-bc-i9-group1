@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+        <h1>Room 2</h1>
+        
+        <div class="room-details text-left">
+           <h3>Room Type: <%= room.type %></h3>
+           <h3>Room ID: <%= room._id %></h3>
+           <h3>Room Status: <%= room.status %></h3>
+           <h3>Users: <%= room.users %></h3>
+            
+
+            <form action="/room/<%=room._id%>?_method=PUT"  method="POST">
+                <input type="hidden" name="room[users]" value='<%= room.users + 1 %>' placeholder="name">
+                <div class="form-group">
+                    <button class='btn btn-primary'>Check In</button>
+                </div>
+            </form>
+
+            <form action="/room/<%=room._id%>?_method=PUT"  method="POST">
+                <input type="hidden" name="room[users]" value='<%= room.users - 1 %>' placeholder="name">
+                <div class="form-group">
+                    <button class='btn btn-danger'>Check Out</button>
+                </div>
+            </form>
+
+        </div>
+        
+
+        <footer class="footer" style="padding: 30px 0px;">
+            <div class="footer">
+                BOOTCAMP GROUP 2017
+            </div>   
+        </footer>
+
+    </body>
+
+
+</html>

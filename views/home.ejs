@@ -1,0 +1,45 @@
+<% include ./partials/header %>
+
+    
+ <form class="form-wrapper"  type='GET' action="/">
+                <input type="text" id="search" name="s" placeholder="Search..." required>
+                <input type="submit" value="Check" id="submit" >
+
+                <div class="sec1">
+
+                </div>
+
+                <div class="sec2">
+
+                </div>
+            </form>
+
+            <div class="container">
+                <form type='GET' action="/">
+                    <select name="type" class="form-control" style="max-width: 300px; margin: 0 auto;">
+                        <option name="meeting_room" value="Meeting"><a href="room1.html"> Meeting Room </a></option>
+                        <option name="game_room" value="Games"><a href="room2.html">Game Room</a></option>
+                        <option name="leisure_room" value="Quiet-time"><a href="room3.html"  >Quiet-time Room </a></option>
+                        <option name="working_room" value="Working"><a href="room4.html">Working Room</a></option>
+                    </select><br>
+                    <button type="submit" class="btn btn-info">Veiw</button>
+                    <br>
+                </form>
+            </div>
+            <div class="rooms">
+               <h2>Rooms: </h2>
+                <% rooms.forEach(function(room){ %>
+                    <li><a href="room/<%= room._id %>"><%= room.name; %></a></li>
+                <% }); %>
+            </div>
+
+        <footer class="footer" style="padding: 30px 0px;">
+            <div class="footer">
+                BOOTCAMP GROUP 2017
+            </div>   
+        </footer>
+
+    </body>
+
+
+</html>
